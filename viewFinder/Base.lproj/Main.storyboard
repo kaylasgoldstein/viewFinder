@@ -13,11 +13,18 @@
         <!--viewFinder-->
         <scene sceneID="Lhd-nN-7kJ">
             <objects>
-                <tableViewController id="Obp-gh-zDc" sceneMemberID="viewController">
+                <tableViewController id="Obp-gh-zDc" customClass="PhotoTableTableViewController" customModule="viewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sz4-Mv-010">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Vq-tN-3gF">
+                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <segue destination="Moa-Ke-sMB" kind="show" identifier="moveToDetail" id="BMg-Ox-PNk"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5h9-Az-ugA">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -45,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="921.73913043478262" y="116.51785714285714"/>
         </scene>
-        <!--Title-->
+        <!--Add New Photo-->
         <scene sceneID="avL-aE-cig">
             <objects>
-                <viewController id="DBy-bg-afr" sceneMemberID="viewController">
+                <viewController id="DBy-bg-afr" customClass="AddPhotoViewController" customModule="viewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAq-uq-bRf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,37 +64,80 @@
                                 <rect key="frame" x="64" y="133" width="246" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUF-rh-f0k">
+                                <rect key="frame" x="136" y="474" width="103" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="camera"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="DBy-bg-afr" eventType="touchUpInside" id="OpB-dI-wAI"/>
+                                    <action selector="takeSelfieTappedWithSender:" destination="DBy-bg-afr" eventType="touchUpInside" id="J0q-KL-Bj4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8E-zc-0W6">
+                                <rect key="frame" x="136" y="530" width="103" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="DBy-bg-afr" eventType="touchUpInside" id="Bk0-C7-wNv"/>
+                                    <action selector="savePhotoTapped:" destination="DBy-bg-afr" eventType="touchUpInside" id="YQ1-ZE-EU1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-lr-l9T">
+                                <rect key="frame" x="114" y="586" width="146" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="my albums"/>
+                                <connections>
+                                    <action selector="albumButton:" destination="DBy-bg-afr" eventType="touchUpInside" id="Teb-jZ-AIL"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vG-en-5TQ">
-                                <rect key="frame" x="82" y="339" width="197" height="30"/>
+                                <rect key="frame" x="77" y="347" width="197" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUF-rh-f0k">
-                                <rect key="frame" x="133" y="514" width="103" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="camera"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-lr-l9T">
-                                <rect key="frame" x="133" y="570" width="103" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="my albums"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8E-zc-0W6">
-                                <rect key="frame" x="133" y="539" width="103" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="save"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.88563897891500987" blue="0.88398630003125889" alpha="0.97108824823943662" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="ZVq-XG-2hD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="H5G-Ji-niH"/>
+                    <navigationItem key="navigationItem" title="Add New Photo" id="H5G-Ji-niH"/>
+                    <connections>
+                        <outlet property="imageView" destination="Kz4-La-2bU" id="md1-JS-gjh"/>
+                        <outlet property="imageview" destination="Kz4-La-2bU" id="qGK-PS-4kV"/>
+                        <outlet property="textField" destination="9vG-en-5TQ" id="gDd-Bk-15J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPI-jf-3yV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1680.8" y="115.59220389805098"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="At2-2s-OIf">
+            <objects>
+                <viewController id="Moa-Ke-sMB" customClass="PhotoDetailViewController" customModule="viewFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hFv-KO-Vl2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nbi-bn-57c">
+                                <rect key="frame" x="29" y="99" width="317" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Q98-5i-SqP"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoDetailView" destination="Nbi-bn-57c" id="EvK-me-XUF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2t-YD-8z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920.79999999999995" y="820.83958020989508"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="htP-6f-n7I">

@@ -14,6 +14,9 @@
 		18FE066122C25EAD0061C465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FE065F22C25EAD0061C465 /* LaunchScreen.storyboard */; };
 		18FE066C22C25EAD0061C465 /* viewFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE066B22C25EAD0061C465 /* viewFinderTests.swift */; };
 		18FE067722C25EAD0061C465 /* viewFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE067622C25EAD0061C465 /* viewFinderUITests.swift */; };
+		18FE068522C267240061C465 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE068422C267240061C465 /* AddPhotoViewController.swift */; };
+		18FE068722C274470061C465 /* PhotoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE068622C274470061C465 /* PhotoTableTableViewController.swift */; };
+		18FE068922C3B8920061C465 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE068822C3B8920061C465 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		18FE067222C25EAD0061C465 /* viewFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = viewFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FE067622C25EAD0061C465 /* viewFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewFinderUITests.swift; sourceTree = "<group>"; };
 		18FE067822C25EAD0061C465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18FE068422C267240061C465 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		18FE068622C274470061C465 /* PhotoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableTableViewController.swift; sourceTree = "<group>"; };
+		18FE068822C3B8920061C465 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = ../../PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,11 @@
 		18FE065222C25EAC0061C465 /* viewFinder */ = {
 			isa = PBXGroup;
 			children = (
+				18FE068422C267240061C465 /* AddPhotoViewController.swift */,
 				18FE065322C25EAC0061C465 /* AppDelegate.swift */,
 				18FE065722C25EAC0061C465 /* Main.storyboard */,
+				18FE068822C3B8920061C465 /* PhotoDetailViewController.swift */,
+				18FE068622C274470061C465 /* PhotoTableTableViewController.swift */,
 				18FE065D22C25EAD0061C465 /* Assets.xcassets */,
 				18FE065F22C25EAD0061C465 /* LaunchScreen.storyboard */,
 				18FE066222C25EAD0061C465 /* Info.plist */,
@@ -257,7 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FE065C22C25EAC0061C465 /* viewFinder.xcdatamodeld in Sources */,
+				18FE068522C267240061C465 /* AddPhotoViewController.swift in Sources */,
 				18FE065422C25EAC0061C465 /* AppDelegate.swift in Sources */,
+				18FE068922C3B8920061C465 /* PhotoDetailViewController.swift in Sources */,
+				18FE068722C274470061C465 /* PhotoTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
